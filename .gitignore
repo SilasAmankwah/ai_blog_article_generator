@@ -1,5 +1,12 @@
+
 media/
 *.mp3
 *.webm
 *.webm.part
-
+.env
+db.sqlite3
+*.sqlite3
+__pycache__/
+*.pyc
+*.pyo
+debug.log
