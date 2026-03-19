@@ -110,7 +110,7 @@ def download_audio(link):
 def get_transcription(link):
     audio_file = download_audio(link)
     
-    headers = {"authorization": os.environ.get("22e56a0ca81d4d86a974acf92f3ab271")}
+    headers = {"authorization": os.environ.get("ASSEMBLYAI_API_KEY")}
     
     # Upload the file
     with open(audio_file, "rb") as f:
@@ -160,7 +160,7 @@ def get_transcription(link):
         time.sleep(3)
 
 def generate_blog_from_transcription(transcription):
-    client = Groq(api_key=os.environ.get("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"))
+    client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
     response = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
         messages=[{
